@@ -47,7 +47,6 @@ class TaskController {
             if (val[1]) {
               if (Object.values(val[1]).length) {
                 delete task[val[0]];
-                  console.log('task[val[0]]', task[val[0]])
               }
             }
           }
