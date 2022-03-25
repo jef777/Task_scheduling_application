@@ -18,7 +18,8 @@ class TaskController {
           order: [
               [ `${order}`, `${orderMethod}` ]
           ],
-
+          raw: true,
+          nest: true,
           attributes: {exclude: [ 'personnel_id', 'customer_id', 'createdAt', 'updatedAt']},
           include: [
             {
@@ -39,13 +40,16 @@ class TaskController {
         ],
         })
 
-      const cleanQueryRes = tasks.rows.map(x => x.get({ plain: true }))
-
-      const flattenedObjects = cleanQueryRes.reduce((a, task) => {
+      const flattenedObjects = tasks.rows.reduce((a, task) => {
         Object.entries(task).forEach(val => {
-          if(val[1] !== null && typeof val[1] == 'object') {
-              task = {...task,...val[1]}
-              delete task[val[0]];
+          if(typeof val[1] === 'object') {
+            task = {...task,...val[1]}
+            if (val[1]) {
+              if (Object.values(val[1]).length) {
+                delete task[val[0]];
+                  console.log('task[val[0]]', task[val[0]])
+              }
+            }
           }
         });
         a.push(task)
