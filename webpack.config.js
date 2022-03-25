@@ -19,9 +19,10 @@ module.exports = {
                 }]
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
+                test: /\.css$/i,
+                include: path.resolve(__dirname, 'src/client'),
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
+              },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|otf|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
                 use: [{
