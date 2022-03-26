@@ -5,10 +5,11 @@ import './App.css';
 import Login from './components/login';
 import NavBar from './components/navBar';
 import Tasks from './components/tasks';
+import useToken from './components/App/useToken';
 
 export default function App() {
 
-    const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
     if(!token) {
       return <Login setToken={setToken} />
