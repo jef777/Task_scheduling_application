@@ -40,7 +40,7 @@ export default function Login({ setToken }) {
                                 d="M11 10c-1 1-1 2-2 2s-2-1-3-2s-2-2-2-3s1-1 2-2s-2-4-3-4s-3 3-3 3c0 2 2.055 6.055 4 8s6 4 8 4c0 0 3-2 3-3s-3-4-4-3z"
                                 />
                         </svg>
-                        <input className="pl-2 outline-none border-none bg-transparent text-white placeholder-white" type="text" name="" id="" placeholder="Phone number"
+                        <input  className="pl-2 outline-none border-none bg-transparent text-white placeholder-white" type="text" name="phonenumber"  placeholder="Phone number"
                             onChange={e => setPhoneNumber(e.target.value)}
                         />
                     </div>
@@ -51,7 +51,7 @@ export default function Login({ setToken }) {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                 d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
                         </svg>
-                        <input className="pl-2 outline-none border-none bg-transparent text-white placeholder-white" type="password" name="" id="" placeholder="Password"
+                        <input  className="pl-2 outline-none border-none bg-transparent text-white placeholder-white" type="password" name="password"  placeholder="Password"
                             onChange={e => setPassword(e.target.value)}/>
                     </div>
 

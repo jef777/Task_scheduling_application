@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function NavBar() {
+export default function NavBar({removeToken}) {
     const [open, setOpen] = useState(false);
 
 return (
@@ -48,11 +48,13 @@ return (
               </a>
             </nav>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-              <a href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-              >
-                Logout
-              </a>
+              <button
+                className="block w-24 bg-indigo-600 mt-4 py-2 rounded-2xl text-white
+                font-semibold mb-2 transition duration-500 ease-in-out active:scale-110
+                hover:bg-indigo-400 transform hover:-translate-y-1 hover:scale-110"
+                onClick={() => removeToken()}
+                >Logout
+              </button>
             </div>
           </div>
         </div>
@@ -124,8 +126,12 @@ return (
                       Tasks
                     </span>
                   </a>
-                  <button href="#" className="block w-1/2 bg-indigo-600 mt-4 py-2 rounded-2xl text-white
-                    font-semibold mb-2 transition duration-500 ease-in-out active:scale-110 hover:bg-indigo-400 transform hover:-translate-y-1 hover:scale-110">Logout</button>
+                  <button
+                    className="block w-1/2 bg-indigo-600 mt-4 py-2 rounded-2xl text-white
+                    font-semibold mb-2 transition duration-500 ease-in-out active:scale-110
+                    hover:bg-indigo-400 transform hover:-translate-y-1 hover:scale-110"
+                    onClick={() => removeToken()}
+                    >Logout</button>
                 </nav>
               </div>
             </div>

@@ -9,7 +9,7 @@ import useToken from './components/App/useToken';
 
 export default function App() {
 
-  const { token, setToken } = useToken();
+  const { token, setToken, removeToken } = useToken();
 
     if(!token) {
       return <Login setToken={setToken} />
@@ -17,7 +17,7 @@ export default function App() {
 
     return (
       <div className="wrapper">
-      <NavBar />
+      <NavBar removeToken ={removeToken} />
       <Router>
         <Routes>
           <Route path="/" caseSensitive={false} element={<Tasks />} />
