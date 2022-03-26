@@ -5,12 +5,12 @@ checkDuplicateUsernameOrPhone = (req, res, next) => {
   // Username
   User.findOne({
     where: {
-      username: req.body.username
+      phone: req.body.phonenumber
     }
   }).then(user => {
     if (user) {
       res.status(400).send({
-        message: "Failed! Username is already taken!"
+        message: "Failed! Phone number is already taken!"
       });
       return;
     }
@@ -18,7 +18,7 @@ checkDuplicateUsernameOrPhone = (req, res, next) => {
     // phone
     User.findOne({
       where: {
-        phone: req.body.phone
+        phone: req.body.phonenumber
       }
     }).then(user => {
       if (user) {

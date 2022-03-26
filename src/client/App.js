@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
 import './App.css';
 
-export default class App extends Component {
-  state = { apiRes: null };
+import Login from './components/login';
+import NavBar from './components/navBar';
+import Tasks from './components/tasks';
 
+export default function App() {
 
-  render() {
-    const { apiRes } = this.state;
+    const [token, setToken] = useState();
+
+    if(!token) {
+      return <Login setToken={setToken} />
+    }
+
     return (
-      <div className="App">
-      <header className="App-header">
-      <h1 className="text-green-600">Using tailwindcss</h1>
-        <p>
-            Task scheduling fullstack application using Node and ReactJs
-        </p>
-      </header>
+      <div className="wrapper">
+      <NavBar />
+      <Router>
+        <Routes>
+          <Route path="/" caseSensitive={false} element={<Tasks />} />
+          <Route path="/tasks" caseSensitive={false} element={<Tasks />} />
+        </Routes>
+      </Router>
     </div>
     );
-  }
+
 }

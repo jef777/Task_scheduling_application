@@ -9,22 +9,21 @@ exports.signup = (req, res) => {
 
   // Save User to Database
   User.create({
-    username: req.body.username,
-    phone: req.body.phone,
+    phone: req.body.phonenumber,
     password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(() => {
         res.send({ message: "User registered successfully!" });
     })
     .catch(err => {
-      res.status(500).send({ message: err.message });
+      res.status(500).send({ messageqq: err.message });
     });
 };
 
 exports.signin = (req, res) => {
   User.findOne({
     where: {
-      username: req.body.username
+      phone: req.body.phonenumber
     }
   })
     .then(user => {
