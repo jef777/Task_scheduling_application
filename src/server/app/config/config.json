@@ -6,6 +6,7 @@
     "host": "ec2-52-73-155-171.compute-1.amazonaws.com",
     "port": 5432,
     "dialect": "postgres",
+    "use_env_variable": "postgres://rwdfseugzpyyml:d7eac35388cf636ea2ea8fbf4b4aa88c6d7ed4185f97f49fc5257829b885bd21@ec2-52-73-155-171.compute-1.amazonaws.com:5432/d23ank0fg7nedj",
     "pool": {
       "max": 5,
       "min": 0,
@@ -22,10 +23,12 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "rwdfseugzpyyml",
+    "password": "d7eac35388cf636ea2ea8fbf4b4aa88c6d7ed4185f97f49fc5257829b885bd21",
+    "database": "d23ank0fg7nedj",
+    "host": "ec2-52-73-155-171.compute-1.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
+    "use_env_variable": "postgres://rwdfseugzpyyml:d7eac35388cf636ea2ea8fbf4b4aa88c6d7ed4185f97f49fc5257829b885bd21@ec2-52-73-155-171.compute-1.amazonaws.com:5432/d23ank0fg7nedj"
   }
 }
