@@ -24,9 +24,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
   // db.sequelize.sync({force: true});
 
 // simple start route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the task scheduling fullstack application" });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to the task scheduling fullstack application" });
+// });
+
+app.use(express.static('dist'));
 
 // routes
 require('./app/routes/auth.routes')(app);

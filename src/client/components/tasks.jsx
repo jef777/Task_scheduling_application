@@ -31,7 +31,9 @@ export default function Tasks() {
 
 
     const getTasks = async () => {
-
+        if (!token) {
+            return
+        }
         await getAssignedTasks(token, {page:currentPage, limit:pageLimit, order:tasksOrder, orderMethod})
         .then((res) => {
             setTasks(res.tasks);
