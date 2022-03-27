@@ -4,8 +4,7 @@
     "description": "This is a task scheduling fullstack application using Node and ReactJs ",
     "main": "index.js",
     "scripts": {
-        "heroku-postbuild": "webpack --mode production --config ./webpack.prod.config.js --progress",
-        "build": "webpack --mode production --config ./webpack.prod.js",
+        "build": "webpack --mode production",
         "start": "npm run build && node src/server/index.js",
         "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
         "server": "nodemon src/server/index.js",
