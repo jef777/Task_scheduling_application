@@ -4,6 +4,7 @@
     "description": "This is a task scheduling fullstack application using Node and ReactJs ",
     "main": "index.js",
     "scripts": {
+        "postinstall": "npm run webpack",
         "build": "webpack --mode production",
         "start": "npm run build && node src/server/index.js",
         "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
