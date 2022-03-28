@@ -29,14 +29,17 @@ cd Task_scheduling_application
 
 # Install dependencies
  npm i
+ cd server && npm run i
+ cd client && npm run i
 
-# Start development server
-npm run dev
 
-# Build for production
-npm run build
+# Start full development server && client
+npm run dev-env
 
-# Start production server
-npm start
-```
+# Build for front-end / client production
+cd client && npm run build
+
+# Build for backend-end / Server production
+cd server && npm run start
+
 
