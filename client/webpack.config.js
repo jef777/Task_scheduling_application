@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-    entry: ['babel-polyfill', './src/client/index.js'],
+    entry: ['babel-polyfill', './src/index.js'],
     output: {
         path: path.join(__dirname, outputDirectory),
         filename: 'bundle.js'
@@ -20,7 +20,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                include: path.resolve(__dirname, 'src/client'),
+                include: path.resolve(__dirname, 'src'),
                 use: ['style-loader', 'css-loader', 'postcss-loader'],
               },
             {
@@ -42,9 +42,9 @@ module.exports = {
         port: 3000,
         open: true,
         historyApiFallback: true,
-        proxy: {
-            '/api': 'http://localhost:8080'
-        }
+        // proxy: {
+        //     '/api': 'http://localhost:8080'
+        // }
     },
     plugins: [
         new CleanWebpackPlugin({

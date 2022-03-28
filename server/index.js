@@ -3,6 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require('path');
+
 
 const app = express();
 
@@ -23,10 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
   // force: true will drop the table if it already exists
   // db.sequelize.sync({force: true});
 
-// simple start route
-// app.get("/", (req, res) => {
-//   res.json({ message: "Welcome to the task scheduling fullstack application" });
-// });
 
 app.use(express.static('dist'));
 
